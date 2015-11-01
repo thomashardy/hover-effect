@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Hover effect with CSS and jQuery — Sandbox PXLCF</title>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <style type="text/css">
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .content {
+            width: 770px;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+
+        .col1{
+            float: left;
+            margin-right: 30px;
+        }
+        .col2 {
+            float: right;
+        }
+
+        .bg {
+            display: inline-block;
+            width: 370px;
+            height: 270px;
+            background: url(book.jpg) no-repeat;
+            background-size: 370px 270px;
+        }
+        
+        .bg2 {
+            display: inline-block;
+            width: 370px;
+            height: 270px;
+            background: url(coffee.jpg) no-repeat;
+            background-size: 370px 270px;
+        }
+    
+        .box {
+            display: inline-block;
+            width: 370px;
+            height: 270px;
+            transition: all ease-in 0.3s;
+        }
+        .box:hover {
+            background-color: rgba(0,0,0, 0.5);
+        }
+        .box:hover .texte {
+            background-color: transparent;
+            margin-top:40px;
+        }
+        
+        .texte {
+            position: absolute;
+            display: inline-block;
+            width: 370px;
+            text-align: center;
+            padding: 20px 0;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            text-shadow: 0px 2px 2px rgba(0,0,0,0.8);
+            margin-top:207px;
+            background-color: rgba(0,0,0,0.7);
+            transition: all ease-in 0.3s;
+        }
+        
+        .desc {
+            position: absolute;
+            width: 370px;
+            margin-top: 150px;
+            text-decoration: none;
+            text-align: center;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 14px;
+            line-height: 1.4;
+            color: transparent;
+            text-shadow: 0px 2px 2px rgba(0,0,0,0);
+            transition: all ease-in 0.3s;
+        }
+
+        .see-more {
+            text-decoration: underline;
+        }
+
+        .legend {
+            text-align: center;
+            font-family: Helvetica, Aria, sans-serif;
+            font-size: 11px;
+            color: rgb(192,192,192);
+
+        }
+        
+        .on {
+            color: #ffffff;
+            text-shadow: 0px 2px 2px rgba(0,0,0,0.8);
+        }
+           
+    </style>
+</head>
+<body>
+    
+    <div class="content">
+
+        <div class="col1">
+        
+            <div class="bg">
+                <a class="box book" href="#">
+                    <span class="texte">White book</span>
+                    <span class="desc book-desc">Enjoy the power of free paper<br>thanks to this great white empty book.<br><br><span class="see-more">See more...</span></span>
+                </a>
+            </div> 
+            
+        </div>
+
+        <div class="col2">
+           
+            <div class="bg2">
+                <a class="box coffee" href="#">
+                    <span class="texte">How to brew coffee</span>
+                    <span class="desc coffee-desc">Discover the best way<br>to brew your favorite coffee!
+                    <br><br><span class="see-more">See more...</span></span>
+                </a>
+            </div> 
+
+        </div>
+
+        <span class="legend">White Book photography by Craig Mod</span>    
+    
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+        $(".book").hover(
+            function() {
+                $(".book-desc").toggleClass("on");
+            });
+        
+        $(".coffee").hover(
+            function() {
+                $(".coffee-desc").toggleClass("on");
+            });
+    
+    </script>
+</body>
+</html>
